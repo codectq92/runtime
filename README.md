@@ -13,6 +13,7 @@ It supports detection of a wide range of GPU and accelerator resources, includin
 - Moore Threads GPU
 - NVIDIA GPU
 - T-Head PPU
+- new chip XPU
 
 Contributions to support additional GPU resources are welcome!
 
