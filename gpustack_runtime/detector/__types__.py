@@ -42,6 +42,10 @@ class ManufacturerEnum(str, Enum):
     """
     Moore Threads Technology Co.,Ltd
     """
+    NEWCHIP = "newchip"
+    """
+    NewChip Technologies Co., Ltd.
+    """
     NVIDIA = "nvidia"
     """
     NVIDIA Corporation
@@ -67,6 +71,7 @@ _MANUFACTURER_BACKEND_MAPPING: dict[ManufacturerEnum, str] = {
     ManufacturerEnum.ILUVATAR: "corex",
     ManufacturerEnum.METAX: "maca",
     ManufacturerEnum.MTHREADS: "musa",
+    ManufacturerEnum.NEWCHIP: "newbackend",
     ManufacturerEnum.NVIDIA: "cuda",
     ManufacturerEnum.THEAD: "hggc",
 }

@@ -474,6 +474,21 @@ ENV LD_LIBRARY_PATH="/opt/maca/lib:/opt/mxdriver/lib:${LD_LIBRARY_PATH}" \
 ENV MTHREADS_VISIBLE_DEVICES="all" \
     MTHREADS_DRIVER_CAPABILITIES="compute,utility"
 
+## Active all NewChip devices detection,
+## works with (default) NewChip container runtime and privileged mode.
+## TODO: Replace with actual documentation URL.
+## Runs:
+## - With container runtime installed:
+##   [TODO, TBD]
+## - Without container runtime installed:
+##   + Allowing privileged, try with:
+##     docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock --privileged -v /opt/newchip-sdk:/opt/newchip-sdk:ro ...
+##   + Disallowing privileged, try with:
+##     docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock --security-opt seccomp=unconfined -v /dev:/dev:ro -v /opt/newchip-sdk:/opt/newchip-sdk:ro ...
+ENV NEWCHIP_VISIBLE_DEVICES="all" \
+    LD_LIBRARY_PATH="/opt/newchip-sdk/lib64:${LD_LIBRARY_PATH}" \
+    GPUSTACK_RUNTIME_DEPLOY_MIRRORED_DEPLOYMENT_IGNORE_VOLUMES="/opt/newchip-sdk;${GPUSTACK_RUNTIME_DEPLOY_MIRRORED_DEPLOYMENT_IGNORE_VOLUMES}"
+
 ## Active all NVIDIA devices detection,
 ## works with (default) NVIDIA container runtime and privileged mode.
 ## See https://docs.nvidia.com/deploy/nvml-api/nvml-api-reference.html#nvml-api-reference.

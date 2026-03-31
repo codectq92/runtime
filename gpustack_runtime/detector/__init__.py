@@ -23,6 +23,7 @@ from .hygon import HygonDetector
 from .iluvatar import IluvatarDetector
 from .metax import MetaXDetector
 from .mthreads import MThreadsDetector
+from .newchip import NewChipDetector
 from .nvidia import NVIDIADetector
 from .thead import THeadDetector
 
@@ -36,6 +37,7 @@ _DETECTORS: list[Detector] = [
     IluvatarDetector(),
     MetaXDetector(),
     MThreadsDetector(),
+    NewChipDetector(),
     NVIDIADetector(),
     THeadDetector(),
 ]

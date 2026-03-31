@@ -10,6 +10,7 @@ from .ascend import AscendGenerator
 from .hygon import HygonGenerator
 from .iluvatar import IluvatarGenerator
 from .metax import MetaXGenerator
+from .newchip import NewChipGenerator
 from .thead import THeadGenerator
 
 if TYPE_CHECKING:
@@ -24,6 +25,7 @@ _GENERATORS: list[Generator] = [
     HygonGenerator(),
     IluvatarGenerator(),
     MetaXGenerator(),
+    NewChipGenerator(),
     THeadGenerator(),
 ]
 """
